@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  # db:
+  #   image: mongodb
+  #   volumes:
+  #     # - ./data/db:/var/lib/postgresql/data
+  #   environment:
+  #     - MONGO_DB=test
+  #     - MONGO_USER=postgres
+  #     - MONGO_PASSWORD=test123
+
+  scrapy:
+    build: .
+    volumes:
+      - .:/code
+    ports:
+      - "8050:8050"
+    # environment:
+    #   - DATABASE_HOST=db
+    #   - MONGO_DB=test
+    #   - MONGO_USER=postgres
+    #   - MONGO_PASSWORD=test123
+    # depends_on:
+    #   - db

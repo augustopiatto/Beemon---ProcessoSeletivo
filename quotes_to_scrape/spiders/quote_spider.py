@@ -1,8 +1,15 @@
 import scrapy
+from scrapy_splash import SplashRequest
 
 class QuoteSpider(scrapy.Spider):
     name = "quote"
-    start_urls = ["https://quotes.toscrape.com/"]
+    custom_settings = {
+        'LOG_FILE': 'quotes_to_scrape//logs/quote_spider.log',
+    }
+
+    def start_requests(self):
+        url = "https://quotes.toscrape.com/"
+        yield SplashRequest(url, callback=self.parse, args={"wait": 0.5})
 
     def parse(self, response):
         self.logger.info("Início do scrape")

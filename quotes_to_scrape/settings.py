@@ -92,6 +92,32 @@ REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
 
-LOG_FILE="./quotes_to_scrape/logs/logs.txt"
+# Setup Logs
 LOG_FILE_APPEND=False
 LOG_ENABLED=True
+
+# Setup Middlewares
+
+# Enable or disable spider middlewares
+SPIDER_MIDDLEWARES = {
+    'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
+}
+# Enable or disable downloader middlewares
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy_splash.SplashCookiesMiddleware': 723,
+    'scrapy_splash.SplashMiddleware': 725,
+    'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810,
+}
+# Configure item pipelines
+# ITEM_PIPELINES = {
+#     'crawler.pipelines.UniqloPipeline': 2,
+# }
+
+# Setup DB
+MONGODB_HOST = 'localhost'
+MONGODB_PORT = 27017
+MONGODB_DBNAME = 'quotesdb'
+MONGODB_COLNAME = 'items'
+
+# Setup Splash
+SPLASH_URL = 'http://localhost:8050'
