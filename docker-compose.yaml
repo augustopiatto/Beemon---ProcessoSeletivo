@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  db:
+    image: mongo
+    volumes:
+      - ./db-data/mongo/:/data/db
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+
+  scrapy:
+    build: .
+    volumes:
+      - .:/code
+    ports:
+      - "8050:8050"
+    depends_on:
+      - db
