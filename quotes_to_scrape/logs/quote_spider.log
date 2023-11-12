@@ -1,4 +1,4 @@
-2023-11-12 17:26:57 [scrapy.middleware] INFO: Enabled downloader middlewares:
+2023-11-12 17:37:44 [scrapy.middleware] INFO: Enabled downloader middlewares:
 ['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
  'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
  'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
@@ -13,42 +13,42 @@
  'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
  'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
  'scrapy.downloadermiddlewares.stats.DownloaderStats']
-2023-11-12 17:26:57 [scrapy.middleware] INFO: Enabled spider middlewares:
+2023-11-12 17:37:44 [scrapy.middleware] INFO: Enabled spider middlewares:
 ['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
  'scrapy_splash.SplashDeduplicateArgsMiddleware',
  'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
  'scrapy.spidermiddlewares.referer.RefererMiddleware',
  'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
  'scrapy.spidermiddlewares.depth.DepthMiddleware']
-2023-11-12 17:26:57 [scrapy.middleware] INFO: Enabled item pipelines:
+2023-11-12 17:37:44 [scrapy.middleware] INFO: Enabled item pipelines:
 ['quotes_to_scrape.pipelines.QuotesToScrapePipeline']
-2023-11-12 17:26:57 [scrapy.core.engine] INFO: Spider opened
-2023-11-12 17:26:57 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
-2023-11-12 17:26:57 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
-2023-11-12 17:26:57 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://quotes.toscrape.com/robots.txt> (referer: None)
-2023-11-12 17:26:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://quotes.toscrape.com/ via http://splash:8050/render.html> (referer: None)
-2023-11-12 17:26:59 [quote] INFO: Início do scrape
-2023-11-12 17:26:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
+2023-11-12 17:37:44 [scrapy.core.engine] INFO: Spider opened
+2023-11-12 17:37:44 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-11-12 17:37:44 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-11-12 17:37:45 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://quotes.toscrape.com/robots.txt> (referer: None)
+2023-11-12 17:37:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://quotes.toscrape.com/ via http://splash:8050/render.html> (referer: None)
+2023-11-12 17:37:47 [quote] INFO: Início do scrape
+2023-11-12 17:37:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
 {'text': '“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”', 'author': 'Albert Einstein', 'tags': ['change', 'deep-thoughts', 'thinking', 'world']}
-2023-11-12 17:26:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
+2023-11-12 17:37:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
 {'text': '“It is our choices, Harry, that show what we truly are, far more than our abilities.”', 'author': 'J.K. Rowling', 'tags': ['abilities', 'choices']}
-2023-11-12 17:26:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
+2023-11-12 17:37:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
 {'text': '“There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.”', 'author': 'Albert Einstein', 'tags': ['inspirational', 'life', 'live', 'miracle', 'miracles']}
-2023-11-12 17:26:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
+2023-11-12 17:37:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
 {'text': '“The person, be it gentleman or lady, who has not pleasure in a good novel, must be intolerably stupid.”', 'author': 'Jane Austen', 'tags': ['aliteracy', 'books', 'classic', 'humor']}
-2023-11-12 17:26:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
+2023-11-12 17:37:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
 {'text': "“Imperfection is beauty, madness is genius and it's better to be absolutely ridiculous than absolutely boring.”", 'author': 'Marilyn Monroe', 'tags': ['be-yourself', 'inspirational']}
-2023-11-12 17:26:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
+2023-11-12 17:37:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
 {'text': '“Try not to become a man of success. Rather become a man of value.”', 'author': 'Albert Einstein', 'tags': ['adulthood', 'success', 'value']}
-2023-11-12 17:26:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
+2023-11-12 17:37:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
 {'text': '“It is better to be hated for what you are than to be loved for what you are not.”', 'author': 'André Gide', 'tags': ['life', 'love']}
-2023-11-12 17:26:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
+2023-11-12 17:37:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
 {'text': "“I have not failed. I've just found 10,000 ways that won't work.”", 'author': 'Thomas A. Edison', 'tags': ['edison', 'failure', 'inspirational', 'paraphrased']}
-2023-11-12 17:26:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
+2023-11-12 17:37:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
 {'text': "“A woman is like a tea bag; you never know how strong it is until it's in hot water.”", 'author': 'Eleanor Roosevelt', 'tags': ['misattributed-eleanor-roosevelt']}
-2023-11-12 17:26:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
+2023-11-12 17:37:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://quotes.toscrape.com/>
 {'text': '“A day without sunshine is like, you know, night.”', 'author': 'Steve Martin', 'tags': ['humor', 'obvious', 'simile']}
-2023-11-12 17:26:59 [scrapy.core.scraper] ERROR: Spider error processing <GET https://quotes.toscrape.com/ via http://splash:8050/render.html> (referer: None)
+2023-11-12 17:37:47 [scrapy.core.scraper] ERROR: Spider error processing <GET https://quotes.toscrape.com/ via http://splash:8050/render.html> (referer: None)
 Traceback (most recent call last):
   File "/usr/local/lib/python3.10/site-packages/scrapy/utils/defer.py", line 279, in iter_errback
     yield next(it)
@@ -81,8 +81,8 @@ Traceback (most recent call last):
   File "/code/quotes_to_scrape/spiders/quote_spider.py", line 29, in parse
     self.take_screenshot()
 TypeError: QuoteSpider.take_screenshot() missing 1 required positional argument: 'response'
-2023-11-12 17:26:59 [scrapy.core.engine] INFO: Closing spider (finished)
-2023-11-12 17:26:59 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+2023-11-12 17:37:47 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-11-12 17:37:47 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
 {'downloader/request_bytes': 886,
  'downloader/request_count': 2,
  'downloader/request_method_count/GET': 1,
@@ -91,15 +91,15 @@ TypeError: QuoteSpider.take_screenshot() missing 1 required positional argument:
  'downloader/response_count': 2,
  'downloader/response_status_count/200': 1,
  'downloader/response_status_count/404': 1,
- 'elapsed_time_seconds': 2.758089,
+ 'elapsed_time_seconds': 2.959557,
  'finish_reason': 'finished',
- 'finish_time': datetime.datetime(2023, 11, 12, 17, 26, 59, 824581, tzinfo=datetime.timezone.utc),
+ 'finish_time': datetime.datetime(2023, 11, 12, 17, 37, 47, 789685, tzinfo=datetime.timezone.utc),
  'item_scraped_count': 10,
  'log_count/DEBUG': 15,
  'log_count/ERROR': 1,
  'log_count/INFO': 11,
- 'memusage/max': 59236352,
- 'memusage/startup': 59236352,
+ 'memusage/max': 59162624,
+ 'memusage/startup': 59162624,
  'response_received_count': 2,
  'robotstxt/request_count': 1,
  'robotstxt/response_count': 1,
@@ -111,5 +111,5 @@ TypeError: QuoteSpider.take_screenshot() missing 1 required positional argument:
  'spider_exceptions/TypeError': 1,
  'splash/render.html/request_count': 1,
  'splash/render.html/response_count/200': 1,
- 'start_time': datetime.datetime(2023, 11, 12, 17, 26, 57, 66492, tzinfo=datetime.timezone.utc)}
-2023-11-12 17:26:59 [scrapy.core.engine] INFO: Spider closed (finished)
+ 'start_time': datetime.datetime(2023, 11, 12, 17, 37, 44, 830128, tzinfo=datetime.timezone.utc)}
+2023-11-12 17:37:47 [scrapy.core.engine] INFO: Spider closed (finished)
