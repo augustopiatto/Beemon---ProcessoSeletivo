@@ -4,7 +4,8 @@ from scrapy_splash import SplashRequest
 class QuoteSpider(scrapy.Spider):
     name = "quote"
     custom_settings = {
-        'LOG_FILE': 'quotes_to_scrape//logs/quote_spider.log',
+        "LOG_FILE": "quotes_to_scrape/logs/quote_spider.log",
+        "USER_AGENT": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:39.0) Gecko/20100101 Firefox/39.0"
     }
 
     def start_requests(self):

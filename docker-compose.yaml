@@ -11,11 +11,15 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=password
 
+  splash:
+    image: scrapinghub/splash
+    ports:
+      - "8050:8050"
+
   scrapy:
     build: .
     volumes:
       - .:/code
-    ports:
-      - "8050:8050"
     depends_on:
+      - splash
       - db
