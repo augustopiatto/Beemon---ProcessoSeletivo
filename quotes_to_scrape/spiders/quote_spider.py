@@ -36,5 +36,6 @@ class QuoteSpider(scrapy.Spider):
         else:
             self.logger.info("Próxima página não encontrada")
 
-    def take_screenshot(self):
+    def take_screenshot(self, response):
         self.logger.info("Tira screenshot da página")
+        self.logger.info(response)
