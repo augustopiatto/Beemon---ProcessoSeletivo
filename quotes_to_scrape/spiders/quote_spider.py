@@ -1,5 +1,6 @@
 import scrapy
 from scrapy_splash import SplashRequest
+import base64
 
 class QuoteSpider(scrapy.Spider):
     name = "quote"
@@ -25,6 +26,8 @@ class QuoteSpider(scrapy.Spider):
                 "tags": tags,
             }
 
+        self.take_screenshot()
+
         self.logger.info("Busca da próxima página")
         next_page = response.css("li.next a::attr(href)").get()
         if next_page is not None:
@@ -32,3 +35,6 @@ class QuoteSpider(scrapy.Spider):
             yield scrapy.Request(next_page, callback=self.parse)
         else:
             self.logger.info("Próxima página não encontrada")
+
+    def take_screenshot(self):
+        self.logger.info("Tira screenshot da página")

@@ -62,9 +62,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "quotes_to_scrape.pipelines.QuotesToScrapePipeline": 300,
-#}
+ITEM_PIPELINES = {
+    'quotes_to_scrape.pipelines.QuotesToScrapePipeline': 2,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -108,10 +108,6 @@ DOWNLOADER_MIDDLEWARES = {
     'scrapy_splash.SplashMiddleware': 725,
     'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810,
 }
-# Configure item pipelines
-# ITEM_PIPELINES = {
-#     'crawler.pipelines.UniqloPipeline': 2,
-# }
 
 # Setup DB
 MONGODB_HOST = 'localhost'
@@ -120,4 +116,4 @@ MONGODB_DBNAME = 'quotesdb'
 MONGODB_COLNAME = 'items'
 
 # Setup Splash
-SPLASH_URL = 'http://localhost:8050'
+SPLASH_URL = 'http://splash:8050'

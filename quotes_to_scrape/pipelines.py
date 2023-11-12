@@ -6,7 +6,12 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-
+from pathlib import Path
+from urllib.parse import quote
+import scrapy
+from scrapy.utils.defer import maybe_deferred_to_future
+from scrapy.http.request import NO_CALLBACK
+import hashlib
 
 class QuotesToScrapePipeline:
     def process_item(self, item, spider):
