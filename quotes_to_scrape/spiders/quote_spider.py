@@ -11,7 +11,13 @@ class QuoteSpider(scrapy.Spider):
 
     def start_requests(self):
         url = "https://quotes.toscrape.com/"
-        yield SplashRequest(url, callback=self.parse, args={"wait": 0.5})
+        args={
+                'html': 1, 
+                'png': 1, 
+                'width': 1000,
+                'wait': 0.5
+            }
+        yield SplashRequest(url, callback=self.parse, endpoint='render.json', args=args)
 
     def parse(self, response):
         self.logger.info("Início do scrape")
@@ -26,16 +32,28 @@ class QuoteSpider(scrapy.Spider):
                 "tags": tags,
             }
 
-        self.take_screenshot()
+        self.take_screenshot(response)
+        self.next_page(response)
 
+
+    def take_screenshot(self, response):
+        self.logger.info("Tira screenshot da página")
+        imgdata = base64.b64decode(response.data['png'])
+        with open('splash.png', 'wb') as f:
+            f.write(imgdata)
+        self.logger.info("Termina de tirar screenshot da página")
+    
+    def next_page(self, response):
         self.logger.info("Busca da próxima página")
         next_page = response.css("li.next a::attr(href)").get()
         if next_page is not None:
             next_page = response.urljoin(next_page)
-            yield scrapy.Request(next_page, callback=self.parse)
+            args={
+                'html': 1, 
+                'png': 1, 
+                'width': 1000,
+                'wait': 0.5
+            }
+            yield SplashRequest(next_page, callback=self.parse, endpoint='render.json', args=args)
         else:
             self.logger.info("Próxima página não encontrada")
-
-    def take_screenshot(self, response):
-        self.logger.info("Tira screenshot da página")
-        self.logger.info(response)
