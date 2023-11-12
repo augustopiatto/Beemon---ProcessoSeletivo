@@ -1,3 +1,5 @@
 /db-data
 */screenshots
+*/json_files
+*.log
 *.pyc
