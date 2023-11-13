@@ -64,6 +64,7 @@ ROBOTSTXT_OBEY = True
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'quotes_to_scrape.pipelines.QuotesToScrapePipeline': 2,
+    'quotes_to_scrape.pipelines.MongoPipeline': 4
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -110,10 +111,10 @@ DOWNLOADER_MIDDLEWARES = {
 }
 
 # Setup DB
-MONGODB_HOST = 'localhost'
+MONGODB_HOST = 'db'
 MONGODB_PORT = 27017
 MONGODB_DBNAME = 'quotesdb'
-MONGODB_COLNAME = 'items'
+MONGODB_COLLECTION_NAME = 'quotes'
 
 # Setup Splash
 SPLASH_URL = 'http://splash:8050'

@@ -5,7 +5,7 @@ import base64
 class QuoteSpider(scrapy.Spider):
     name = "quote"
     custom_settings = {
-        "LOG_FILE": "quotes_to_scrape/logs/quote_spider.log",
+        "LOG_FILE": "./output/logs/quote_spider.log",
         "USER_AGENT": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:39.0) Gecko/20100101 Firefox/39.0"
     }
     page = 1
@@ -35,25 +35,25 @@ class QuoteSpider(scrapy.Spider):
 
         self.take_screenshot(response)
     
-        self.logger.info("Busca da próxima página")
-        next_page = response.css("li.next a::attr(href)").get()
-        if next_page is not None:
-            self.page += 1
-            next_page = response.urljoin(next_page)
-            args={
-                'html': 1, 
-                'png': 1, 
-                'width': 1000,
-                'wait': 0.5
-            }
-            yield SplashRequest(next_page, callback=self.parse, endpoint='render.json', args=args)
-        else:
-            self.logger.info("Próxima página não encontrada")
+        # self.logger.info("Busca da próxima página")
+        # next_page = response.css("li.next a::attr(href)").get()
+        # if next_page is not None:
+        #     self.page += 1
+        #     next_page = response.urljoin(next_page)
+        #     args={
+        #         'html': 1, 
+        #         'png': 1, 
+        #         'width': 1000,
+        #         'wait': 0.5
+        #     }
+        #     yield SplashRequest(next_page, callback=self.parse, endpoint='render.json', args=args)
+        # else:
+        #     self.logger.info("Próxima página não encontrada")
 
     def take_screenshot(self, response):
         self.logger.info("Tira screenshot da página")
         imgdata = base64.b64decode(response.data['png'])
 
-        with open(f'./quotes_to_scrape/screenshots/page-{self.page}.png', 'wb') as f:
+        with open(f'./output/screenshots/page-{self.page}.png', 'wb') as f:
             f.write(imgdata)
         self.logger.info("Termina de tirar screenshot da página")

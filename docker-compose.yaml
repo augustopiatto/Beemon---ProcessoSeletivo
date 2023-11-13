@@ -4,7 +4,7 @@ services:
   db:
     image: mongo
     volumes:
-      - ./db-data/mongo/:/data/db
+      - db-data:/data/db
     ports:
       - "27017:27017"
     environment:
@@ -19,7 +19,13 @@ services:
   scrapy:
     build: .
     volumes:
-      - .:/code
+      - ./scrapy.cfg:/app/scrapy.cfg
+      - ./output:/app/output
+    env_file: ./.env
     depends_on:
       - splash
       - db
+
+volumes:
+  db-data:
+  

@@ -50,7 +50,8 @@ O projeto inclui os seguintes scripts:
 ``
 
 ## Decisões técnicas
-
+log está sobrescrevendo para melhor testar, em aplicação real seria um histórico
+json está sobrescrevendo para melhor testar, em aplicação real seria um histórico
 ### Scrapy
 
 - 
