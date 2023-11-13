@@ -1,6 +1,5 @@
-/db-data
-*/screenshots/*
-*/json_files/*
-*/logs/*
+*/screenshots/*.png
+*/json_files/*.json
+*/logs/*.log
 *.pyc
 **/__pycache__/*

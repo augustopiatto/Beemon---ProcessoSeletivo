@@ -13,8 +13,8 @@ class QuoteSpider(scrapy.Spider):
     def start_requests(self):
         url = "https://quotes.toscrape.com/"
         args={
-                'html': 1, 
-                'png': 1, 
+                'html': 1,
+                'png': 1,
                 'width': 1000,
                 'wait': 0.5
             }
@@ -41,8 +41,8 @@ class QuoteSpider(scrapy.Spider):
             self.page += 1
             next_page = response.urljoin(next_page)
             args={
-                'html': 1, 
-                'png': 1, 
+                'html': 1,
+                'png': 1,
                 'width': 1000,
                 'wait': 0.5
             }

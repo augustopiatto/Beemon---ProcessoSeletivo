@@ -20,13 +20,16 @@ services:
     build: .
     volumes:
       - ./scrapy.cfg:/app/scrapy.cfg
-      - ./output:/app/output
+      - ./output/logs/:/app/output/logs/
+      - ./output/screenshots/:/app/output/screenshots/
+      - ./output/json_files/:/app/output/json_files/
     environment:
       - MONGO_USERNAME=admin
       - MONGO_PASSWORD=password
     depends_on:
       - splash
       - db
+    user: ${UID}:${UID}
 
 volumes:
   db-data:
