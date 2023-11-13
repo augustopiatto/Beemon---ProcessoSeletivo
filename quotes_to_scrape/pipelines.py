@@ -35,7 +35,6 @@ class MongoPipeline:
 
     def close_spider(self, spider):
         if self.items:
-            # Adiciona no banco
             self.insert_in_db()
 
         self.client.close()

@@ -22,6 +22,9 @@ services:
       - ./scrapy.cfg:/app/scrapy.cfg
       - ./output:/app/output
     env_file: ./.env
+    environment:
+      - MONGO_USERNAME=admin
+      - MONGO_PASSWORD=password
     depends_on:
       - splash
       - db
