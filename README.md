@@ -9,12 +9,16 @@ Este é um projeto que usa Scrapy, Splash, MongoDB e Docker.
 
 O objetivo é vasculhar o site [Quotes to Scrape](https://quotes.toscrape.com/), estruturar seus dados e salvá-los em banco não relacional, porém, de forma que não seja custoso ao banco.
 
+## Pré-requisitos
+
+- Docker
+- Docker compose
+
 ## Começando
 
 Para iniciar o projeto, siga os passos abaixo:
 
 - Clone o repositório em sua máquina local.
-- Instale docker localmente
 - Rode o comando `docker compose up --build`
 
 ## Estrutura de pasta
@@ -58,14 +62,6 @@ O projeto possui as seguintes funcionalidades:
 - Gerar dados de saída (json, log, screenshot)
 - Salvar as informações em um banco não relacional (MongoDB)
 
-## Scripts
-
-O projeto inclui os seguintes scripts:
-
-`docker compose build`: Gera a imagem do container com os serviços indicados no `docker-compose.yaml`
-`docker compose up`: Sobe a imagem gerada pelo build
-`docker compose up --build`: Realiza as duas tarefas anteriores de uma única vez
-
 ## Decisões técnicas
 
 ### Scrapy
@@ -102,6 +98,7 @@ O projeto inclui os seguintes scripts:
 
 ## Melhorias futuras
 
+- Adicionar flake8
 - Trazer resultados de forma dinamica sem fixar caminhos no xpath
 - Fazer um dataframe que possibilite visualizar os resultados via pandas
 - Conseguir agendar uma execução para um dia e horario
