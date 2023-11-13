@@ -47,6 +47,6 @@ class MongoPipeline:
             self.items = []
 
         return item
-    
+
     def insert_in_db(self):
         self.collection.insert_many(self.items)

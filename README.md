@@ -13,6 +13,7 @@ O objetivo é vasculhar o site [Quotes to Scrape](https://quotes.toscrape.com/),
 
 - Docker
 - Docker compose
+- Flake8
 
 ## Começando
 
@@ -62,6 +63,10 @@ O projeto possui as seguintes funcionalidades:
 - Gerar dados de saída (json, log, screenshot)
 - Salvar as informações em um banco não relacional (MongoDB)
 
+## Scripts
+
+- `python3.10 -m flake8`: Exibe erros de formatação do código
+
 ## Decisões técnicas
 
 ### Scrapy
@@ -98,7 +103,6 @@ O projeto possui as seguintes funcionalidades:
 
 ## Melhorias futuras
 
-- Adicionar flake8
 - Trazer resultados de forma dinamica sem fixar caminhos no xpath
 - Fazer um dataframe que possibilite visualizar os resultados via pandas
 - Conseguir agendar uma execução para um dia e horario
